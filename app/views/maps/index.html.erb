@@ -62,11 +62,22 @@
         </td>
         <td style="vertical-align:middle;">
           <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                <%= link_to 'Show', user_map_url(map.user.id,map), class: "btn btn-info" %>
-                <%= link_to 'Edit', edit_user_map_url(map.user.id,map), class: "btn btn-primary" %>
-                <%= link_to 'Destroy', user_map_url(map.user.id,map), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
-              <%= link_to 'Add Photos', new_user_map_photo_multiple_url(map.user.id,map), class: "btn btn-success" %>
+			<%= link_to 'Show', user_map_url(map.user.id,map), class: "btn btn-info" %>
+			<%= link_to 'Edit', edit_user_map_url(map.user.id,map), class: "btn btn-primary" %>
+			<%= link_to 'Destroy', user_map_url(map.user.id,map), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+			<% if map.processing != true && map.complete == false %>
+				<%= link_to 'Add Photos', new_user_map_photo_multiple_url(map.user.id,map), class: "btn 	btn-success" %>
+			<% end %>
+			<% if map.photos.count > 1 %>
+				<% if map.failed == false %>
+          <% if map.complete != true %>
             <%= link_to 'Generate', generate_url(map.user.id,map), class: "btn btn-success", data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        <% else %>
+        <%= link_to 'Restart', generate_url(map.user.id,map), class: "btn btn-success", data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Resume', generate_url(map.user.id,map), class: "btn btn-warning", data: { confirm: 'Are you sure?' } %>
+        <% end %>
+			<% end %>
           </div>
         </td>
       </tr>

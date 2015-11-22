@@ -1,8 +1,16 @@
+<% if @map.processing==true %>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr class="success"><td style="text-align:center;"><h1 style="margin-top:0;"><span class="label label-success">Map Being Processed</span></h1></td></tr>
+    </table>
+  </div>
+<% end %>
+
 <div class="page-header">
   <h1><%= @map.title %>     <small><%= @map.camera %></small></h1>
 </div>
 
-<% if @map.complete == true %>
+<% if @map.complete == true || @map.processing == true%>
 
 <p>
   <strong style="vertical-align:top;">Map</strong>

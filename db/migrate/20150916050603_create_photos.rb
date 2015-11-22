@@ -1,6 +1,7 @@
 class CreatePhotos < ActiveRecord::Migration
   def change
     create_table :photos do |t|
+	  t.integer :order, default: 0
       t.string :image_uid
       t.string :user_id
       t.string :image_name

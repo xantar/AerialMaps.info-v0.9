@@ -156,24 +156,27 @@ def queue
   end
 end
 
-def generate
+def generate(recover: 0)
+  if ( recover == 0) 
+    self.image_uid="http://aerialmaps.info/photos/maps/#{self.id}.png"
+    self.thumbnail_uid="http://aerialmaps.info/photos/maps/#{self.id}_20.png"
+    self.latitude = self.photos.all.average('gps_latitude')
+    self.longitude = self.photos.all.average('gps_longitude')
+  # here We should determine if the camera exists, and if it doesn't lets create a new camera w/o lens profile
+    self.camera = self.photos.first.camera
+    self.checkCamera
+    self.taken_at = self.photos.first.taken_at
 
-  self.image_uid="http://aerialmaps.info/photos/maps/#{self.id}.png"
-  self.thumbnail_uid="http://aerialmaps.info/photos/maps/#{self.id}_20.png"
-  self.latitude = self.photos.all.average('gps_latitude')
-  self.longitude = self.photos.all.average('gps_longitude')
-# here We should determine if the camera exists, and if it doesn't lets create a new camera w/o lens profile
-  self.camera = self.photos.first.camera
-  self.checkCamera
-  self.taken_at = self.photos.first.taken_at
+    if ( !self.bearing ) 
+      self.bearing=self.calcBearing
+    end
 
-  if ( !self.bearing ) 
-    self.bearing=self.calcBearing
+    #Generate Image.order for the project
+    self.imageOrder
+    system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{self.bearing} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
+  else
+      system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{self.bearing} #{self.status} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
   end
-
-  #Generate Image.order for the project
-  self.imageOrder
-  system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{self.bearing} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
 
   #Remove from the queue
   self.queued=false
@@ -182,7 +185,7 @@ def generate
   self.processing=true
   self.generated_at=Time.now
   #set Flags
-  self.complete=true
+#  self.complete=true
   self.save  
 end
 
@@ -193,16 +196,23 @@ def self.refresh
       # Process finished so lets mark the object as finished
   	  map.processing=false
       # Check if status is Done? & if final file exists
-	  #Check for final output file(s)
-	  finalfile = "public/processing/#{map.id}/map.tif"
-	  if ( File.exists?(finalfile) )
+      #Check for final output file(s)
+      finalfile = "public/processing/#{map.id}/map.tif"
+      if ( File.exists?(finalfile) )
 	    # Success! 
+        map.generated_at=Time.now
+        self.complete=true
       else 
 	    # Fail!
-		map.failed=true
-		map.complete=false
-	  end
+        map.failed=true
+        map.complete=false
+      end
       map.save
+    else
+      if map.status == 0 && map.generated_at < Time.now - 2.hours
+        #Map Generation has stalled, so ReQueue
+        map.queue
+      end
     end
   end
 end

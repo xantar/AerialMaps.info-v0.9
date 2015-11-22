@@ -212,7 +212,7 @@ Degree=0
 Amount=0
 
 [LensProfile]
-LCPFile=/home/ubuntu/AerialMaps.info-v0.9/public/LensProfiles/1.0/DJI/PHANTOM VISION FC200.lcp
+LCPFile=/home/ubuntu/AerialMaps.info-v0.9/public/LensProfiles/1.0/GoPro/HERO3+ Black Edition.lcp
 UseDistortion=true
 UseVignette=true
 UseCA=false

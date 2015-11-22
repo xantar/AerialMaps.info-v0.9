@@ -38,7 +38,8 @@ ActiveRecord::Schema.define(version: 20151013185308) do
     t.string   "taken_at"
     t.string   "user_id"
     t.integer  "status"
-    t.boolean  "failed"
+    t.boolean  "ordered"
+    t.boolean  "failed",            default: false
     t.boolean  "queued",            default: false
     t.datetime "queued_at"
     t.boolean  "processing",        default: false
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 20151013185308) do
   end
 
   create_table "photos", force: :cascade do |t|
+    t.integer  "order",         default: 0
     t.string   "image_uid"
     t.string   "user_id"
     t.string   "image_name"
@@ -61,8 +63,8 @@ ActiveRecord::Schema.define(version: 20151013185308) do
     t.float    "gps_latitude"
     t.float    "gps_longitude"
     t.string   "taken_at"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "users", force: :cascade do |t|
