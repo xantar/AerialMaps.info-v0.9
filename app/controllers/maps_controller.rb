@@ -11,12 +11,20 @@ class MapsController < ApplicationController
   def generate
     @map = Map.find(params[:id])
     @map.checkCamera
-    @map.queue
+    @map.queue(0)
     respond_to do |format|
       format.html { redirect_to user_maps_path(params[:user_id]), notice: 'Map was successfully started.' }
     end
   end
 
+  def retry
+    @map = Map.find(params[:id])
+    @map.queue(@map.status)
+    respond_to do |format|
+      format.html { redirect_to user_maps_path(params[:user_id]), notice: 'Map was successfully started.' }
+    end
+  end
+  
   def rotate
     @map = Map.find(params[:id])
     @map.rotate(params[:rot])
@@ -76,10 +84,19 @@ class MapsController < ApplicationController
   # DELETE /maps/1.json
   def destroy
     @map.killProcess
+    @map.remove
     @map.destroy
     respond_to do |format|
       format.html { redirect_to user_maps_url, notice: 'Map was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  
+  def cancel
+    @map = Map.find(params[:id])
+    @map.killProcess
+    respond_to do |format|
+      format.html { redirect_to user_maps_path(params[:user_id]), notice: 'Map was successfully started.' }
     end
   end
 

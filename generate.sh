@@ -2,7 +2,7 @@
 
 ############################################
 ###  Author: Paul Benson
-###    Date: 10/18/2015
+###    Date: 11/22/2015
 ###
 ### Created for aerialmaps.info
 #############################################
@@ -504,6 +504,11 @@ case $STEP in
   #################### Step 5: Copy Final Images ####################
   cp output.png ../../photos/maps/$MAP.png
   cp output_20.png ../../photos/maps/"$MAP"_20.png
+  
+  #################### Step 6: Cleanup ####################
+  rm map.tif
+  rm map_*.tif
+  rm *.jpg
 ;;
 
 esac

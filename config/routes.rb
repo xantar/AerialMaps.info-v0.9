@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get "/scheduele" => "pages#scheduele", as: :scheduele
   
-  get '/users/:user_id/maps/:maps_id/photos/new_multiple', to: 'photos#new_multiple', as: :new_user_map_photo_multiple
+  get "/users/:user_id/maps/:maps_id/photos/new_multiple", to: "photos#new_multiple", as: :new_user_map_photo_multiple
 
   get "/gallery" => "galleries#index", as: :gallery
   get "/gallery/:id" => "galleries#show", as: :gallery_map
@@ -46,10 +46,15 @@ Rails.application.routes.draw do
 # Route for generating mosaic
 
   get 'users/:user_id/maps/generate/:id' => 'maps#generate', as: :generate
+  get 'users/:user_id/maps/retry/:id' => 'maps#retry', as: :retry
 
 # Route for Map Rotation
 
   get 'users/:user_id/maps/:id/rotate/:rot' => 'maps#rotate', as: :rotate
+  
+# Route for Map Generation Cancelation
+
+  get 'users/:user_id/maps/cancel/:id' => 'maps#cancel', as: :cancel
 
   resources :maps
  
