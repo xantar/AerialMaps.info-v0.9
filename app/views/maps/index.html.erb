@@ -64,12 +64,12 @@
           <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
 			<%= link_to 'Show', user_map_url(map.user.id,map), class: "btn btn-info" %>
 			<%= link_to 'Edit', edit_user_map_url(map.user.id,map), class: "btn btn-primary" %>
-      <% if map.processing == true %>
+      <% if map.processing == true || map.queued == true %>
         <%= link_to 'Cancel', cancel_url(map.user.id,map), class: "btn btn-warning", data: { confirm: 'Are you sure?' } %>
       <% else %>
         <%= link_to 'Destroy', user_map_url(map.user.id,map), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-			<% if map.processing != true && map.complete == false %>
+			<% if map.processing != true && map.complete == false && map.queued == false %>
 				<%= link_to 'Add Photos', new_user_map_photo_multiple_url(map.user.id,map), class: "btn 	btn-success" %>
 			<% end %>
 			<% if map.photos.count > 1 %>

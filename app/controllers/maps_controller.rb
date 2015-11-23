@@ -95,6 +95,12 @@ class MapsController < ApplicationController
   def cancel
     @map = Map.find(params[:id])
     @map.killProcess
+    @map.complete=false
+    @map.processing=false
+    @map.queued=false
+    @map.generated_at=nil
+    @map.queued_at=nil
+    @map.save
     respond_to do |format|
       format.html { redirect_to user_maps_path(params[:user_id]), notice: 'Map was successfully started.' }
     end

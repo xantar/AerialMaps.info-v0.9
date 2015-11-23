@@ -12,5 +12,6 @@
 
 checkpid=$(cat "public/processing/$1/process.id")
 
+pkill -P $checkpid
 kill $checkpid -n
 exit $?

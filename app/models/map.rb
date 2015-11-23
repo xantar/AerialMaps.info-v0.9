@@ -199,7 +199,7 @@ end
 def self.refresh
   Map.all.where(processing: true).each do |map|
     res = map.checkProcess
-    if ( res==false && map.status > 0 )
+    if ( res==false && map.status > 0 && map.generated_at < Time.now - 5.minutes )
       # Process finished so lets mark the object as finished
   	  map.checkProcess
       # Check if status is Done? & if final file exists
@@ -210,6 +210,25 @@ def self.refresh
       map.generated_at=Time.now  
       map.complete=true
     else 
+	    # Fail!
+		map.failed=true
+		map.complete=false
+	  end
+      map.save
+    end
+  end
+  
+   Map.all.where(generated_at: (Time.now - 1.hour)..Time.now).each do |map|
+      res = map.checkProcess
+    if ( res==false && map.status > 0 )
+      # Process finished so lets mark the object as finished
+  	  map.processing=false
+      # Check if status is Done? & if final file exists
+	  #Check for final output file(s)
+	  finalfile = "public/processing/#{map.id}/map.tif"
+	  if ( File.exists?(finalfile) )
+	    # Success! 
+      else 
 	    # Fail!
 		map.failed=true
 		map.complete=false
