@@ -64,9 +64,6 @@ def rotate(rot)
   if Float(self.bearing) < 0
     self.bearing=Float(self.bearing)+360
   end
-  if File.exists?("public/processing/#{self.id}/process.status")
-    File.delete("public/processing/#{self.id}/process.status")
-  end
 
   system("./rotate.sh #{self.id} #{self.bearing} &")
   self.processing=true
@@ -142,15 +139,16 @@ def imageOrder
 end
 
 def queue(recover)
-  if ( recover == 0 )
-    if ( self.photos.count >1 )
+  if ( self.photos.count >1 )
+    if ( recover == 0 )
+
       if File.exists?("public/processing/#{self.id}/process.status")
         File.delete("public/processing/#{self.id}/process.status")
       end
       self.status=0
-  else
-    self.status=recover
-  end
+    else
+      self.status=recover
+    end
       self.failed=false
       
       self.queued = true
@@ -183,7 +181,7 @@ def generate
     #Generate Image.order for the project
     self.imageOrder
   end
-      system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{self.bearing} #{self.status} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
+      system ("./generate.sh #{self.id} #{Camera.where(name: self.camera).first.id} #{MappingMethod.find(self.mapping_method_id).name} #{MappingLevel.find(self.mapping_level_id).name} #{self.bearing} #{self.status} 2>&1 | tee public/debug/debug_generate_map_#{self.id} &")
 
   #Remove from the queue
   self.queued=false
@@ -197,6 +195,27 @@ def generate
 end
 
 def self.refresh
+   Map.all.where(generated_at: (Time.now - 1.hour)..Time.now).each do |map|
+      res = map.checkProcess
+    if ( res==false && map.status > 0 )
+      # Process finished so lets mark the object as finished
+  	  map.processing=false
+      # Check if status is Done? & if final file exists
+	  #Check for final output file(s)
+	  finalfile = "public/processing/#{map.id}/output.tif"
+	  if ( File.exists?(finalfile) )
+	    # Success! 
+      map.failed=false
+      map.complete=true
+      else 
+	    # Fail!
+		map.failed=true
+		map.complete=false
+	  end
+      map.save
+    end
+  end
+
   Map.all.where(processing: true).each do |map|
     res = map.checkProcess
     if ( res==false && map.status > 0 && map.generated_at < Time.now - 5.minutes )
@@ -210,25 +229,6 @@ def self.refresh
       map.generated_at=Time.now  
       map.complete=true
     else 
-	    # Fail!
-		map.failed=true
-		map.complete=false
-	  end
-      map.save
-    end
-  end
-  
-   Map.all.where(generated_at: (Time.now - 1.hour)..Time.now).each do |map|
-      res = map.checkProcess
-    if ( res==false && map.status > 0 )
-      # Process finished so lets mark the object as finished
-  	  map.processing=false
-      # Check if status is Done? & if final file exists
-	  #Check for final output file(s)
-	  finalfile = "public/processing/#{map.id}/map.tif"
-	  if ( File.exists?(finalfile) )
-	    # Success! 
-      else 
 	    # Fail!
 		map.failed=true
 		map.complete=false
@@ -251,7 +251,7 @@ def self.scheduele
 end
 
 def self.maxProcesses
-    max_concurrent = 1  # Maximum number of maps generated at the same time
+    max_concurrent = 8  # Maximum number of maps generated at the same time
 end
 
 end

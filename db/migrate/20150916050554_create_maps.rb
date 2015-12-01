@@ -8,11 +8,12 @@ class CreateMaps < ActiveRecord::Migration
       t.string :longitude
       t.string :bearing
       t.string :camera
-      t.string :mapping_method_id
+      t.string :mapping_method_id, default: 1
+	  t.string :mapping_level_id, default: 2
       t.string :taken_at
       t.string :user_id
 	  t.integer :status
-	  t.boolean :ordered, decault: false
+	  t.boolean :ordered, default: false
 	  t.boolean :failed, default: false
       
       t.boolean :queued, default: false

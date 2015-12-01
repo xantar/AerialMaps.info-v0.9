@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013185308) do
+ActiveRecord::Schema.define(version: 20151201202519) do
 
   create_table "cameras", force: :cascade do |t|
     t.string   "name"
     t.boolean  "lens_profile", default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "mapping_levels", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "mapping_methods", force: :cascade do |t|
@@ -34,11 +40,12 @@ ActiveRecord::Schema.define(version: 20151013185308) do
     t.string   "longitude"
     t.string   "bearing"
     t.string   "camera"
-    t.string   "mapping_method_id"
+    t.string   "mapping_method_id", default: "1"
+    t.string   "mapping_level_id",  default: "2"
     t.string   "taken_at"
     t.string   "user_id"
     t.integer  "status"
-    t.boolean  "ordered"
+    t.boolean  "ordered",           default: false
     t.boolean  "failed",            default: false
     t.boolean  "queued",            default: false
     t.datetime "queued_at"

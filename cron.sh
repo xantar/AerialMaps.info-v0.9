@@ -23,4 +23,6 @@
 #(sleep 55 && wget -O - http://$1/tock >/dev/null 2>&1) &
 #(sleep 60 && wget -O - http://$1/tock >/dev/null 2>&1) &
 
-
+sleep 30 && wget -O - http://$1/tock  >/dev/null 2>&1
+#sleep 15 && wget -O - http://$1/tock  >/dev/null 2>&1
+#sleep 15 && wget -O - http://$1/tock  >/dev/null 2>&1

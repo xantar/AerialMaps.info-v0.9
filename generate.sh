@@ -8,8 +8,8 @@
 #############################################
 
 ### Command Line Arguements
-#   Usage: generate.sh [Map ID] [Camera ID] [Mapping Method] [Bearing] (Skip to step#)
-# Example: generate.sh 1 1 prealigned 142.05
+#   Usage: generate.sh [Map ID] [Camera ID] [Mapping Method] [Mapping Level] [Bearing] (Skip to step#)
+# Example: generate.sh 1 1 PreAligned Standard 142.05
 
 # Map ID
 MAP=$1
@@ -20,12 +20,15 @@ CAM=$2
 # Mapping Method
 MET=$3
 
+# Mapping Level
+MLEV=$4
+
 # Bearing Rotation
-ROT=$4
+ROT=$5
 
 # Skip to Step (used for recovering a failed attempt)
-if [ $5 ]; then 
-  STEP=$5
+if [ $6 ]; then 
+  STEP=$6
 else
   STEP=0
 fi
@@ -59,19 +62,60 @@ TWIDTH=600
 # Control Point Settings
 MINMATCH=20
 
-#Seive 1
-S1W=30
-S1H=30
+case $MLEV in
+  Fast)    
+    #Seive 1
+    S1W=10
+    S1H=10
 
-#Seive 2
-S2W=15
-S2H=15
+    #Seive 2
+    S2W=5
+    S2H=5
+    ;&
+  Standard)
+    #Seive 1
+    S1W=20
+    S1H=20
+
+    #Seive 2
+    S2W=10
+    S2H=10
+    ;&
+  Better)
+    #Seive 1
+    S1W=30
+    S1H=30
+
+    #Seive 2
+    S2W=10
+    S2H=10
+    ;&
+  Best)
+    #Seive 1
+    S1W=30
+    S1H=30
+
+    #Seive 2
+    S2W=15
+    S2H=15
+  ;&
+  *)
+    #Seive 1
+    S1W=10
+    S1H=10
+
+    #Seive 2
+    S2W=5
+    S2H=5
+  ;&
+esac
 
 case $STEP in
 0)
   # The script starts in ./ (The root directory of the Rails App)
   cd public
   echo "0" > $MAP/process.status
+  echo $$ > $MAP/process.id
   
   #################### Step 1: Lens correction ####################
 
@@ -84,9 +128,15 @@ case $STEP in
   rm -rf $MAP
   mkdir $MAP
   mv $MAP.order $MAP/image.order
+  
+  # go back to root
+  cd ..
+  cd ..
 ;&
 
 1)
+  cd public
+  cd processing
   # Store the PID in $MAP/process.id
   echo $$ > $MAP/process.id
   echo "1" > $MAP/process.status
@@ -187,10 +237,16 @@ case $STEP in
   echo '------------------------------------'
   echo '      Finished Lens Correction'
   echo '------------------------------------'
+  
+  cd ..
+  cd ..
 ;&
 
 2)
+  cd public
+  cd processing
   cd $MAP
+  echo $$ > process.id
 
   # Rename all to lowercase
   rename 'y/A-Z/a-z/' *
@@ -219,9 +275,9 @@ case $STEP in
   cp ../../images/map_generating.png ../../photos/maps/"$MAP"_20.png
 
   sleep 1
-  if [ $MET == prealigned ] ; then
+  if [ $MET == PreAligned ] ; then
     /usr/bin/cpfind -n 1 --prealigned --minmatches $MINMATCH --sieve1width=$S1W --sieve1height=$S1H --sieve2width=$S2W --sieve2width=$S2H -o ./map.pto ./map.pto
-  elif [ $MET == multirow ]; then
+  elif [ $MET == MultiRow ]; then
     /usr/bin/cpfind -n 1 --multirow --minmatches $MINMATCH --sieve1width=$S1W --sieve1height=$S1H --sieve2width=$S2W --sieve2width=$S2H -o ./map.pto ./map.pto
   else
     /usr/bin/cpfind --linearmatch --minmatches $MINMATCH --sieve1width=$S1W --sieve1height=$S1H --sieve2width=$S2W --sieve2width=$S2H -o ./map.pto ./map.pto
@@ -233,9 +289,17 @@ case $STEP in
   else
     exit $?
   fi
+  
+  cd ..
+  cd ..
+  cd ..
 ;&
 
 3)
+  cd public
+  cd processing
+  cd $MAP
+  echo $$ > process.id
   #################### Step 3: Control Point Optimization ####################
 
   # Set the temporary image for the Map Project to Control Point Optomization
@@ -279,9 +343,17 @@ case $STEP in
   else
     exit $?
   fi
+  
+  cd ..
+  cd ..
+  cd ..
 ;&  
 
 4)
+  cd public
+  cd processing
+  cd $MAP
+  echo $$ > process.id
   sleep 1
   ### Run Pano_Modify to set projection to 0 and Center the Panorama
   #Usage:  pano_modify [options] input.pto
@@ -312,9 +384,16 @@ case $STEP in
   else
     exit $?
   fi
+  cd ..
+  cd ..
+  cd ..
 ;&
   
 5)
+  cd public
+  cd processing
+  cd $MAP
+  echo $$ > process.id
   sleep 1
   ### Run Nona 
   # The following output formats (n option of panotools p script line)
@@ -361,9 +440,16 @@ case $STEP in
   else
     exit $?
   fi
+  cd ..
+  cd ..
+  cd ..
 ;&
 
 6)
+  cd public
+  cd processing
+  cd $MAP
+  echo $$ > process.id
   #################### Step 4: Blending Images ####################
 
   # Set the temporary image for the Map Project to Blending Images
@@ -481,9 +567,17 @@ case $STEP in
   else
     exit $?
   fi
+  
+  cd ..
+  cd ..
+  cd ..
 ;&
 
 7)
+  cd public
+  cd processing
+  cd $MAP
+  echo $$ > process.id
   ### Run Convert
 
   #################### Step 4: Compress Final Map ####################
@@ -495,9 +589,17 @@ case $STEP in
   else
     exit $?
   fi
+  
+  cd ..
+  cd ..
+  cd ..
 ;&
 
 8)
+  cd public
+  cd processing
+  cd $MAP
+  echo $$ > process.id
   convert ./output.tif -compress $COMP3 -depth $DEPTH -rotate $ROT -transparent white ./output.png
   convert ./output.png -resize $TWIDTH output_20.png
 

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :mapping_levels
   root to: 'pages#welcome'
 
   resources :cameras, only: [:index]
