@@ -16,3 +16,5 @@
 //= require bootstrap
 //= require jquery.remotipart
 //= require jquery-fileupload/basic
+//= require html.sortable
+//= require_tree .

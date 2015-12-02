@@ -36,9 +36,6 @@ class MapsController < ApplicationController
   def uploadcomplete
     @map = Map.find(params[:id])
     @map.autoSort
-    respond_to do |format|
-      format.html { redirect_to edit_user_map_url(params[:user_id],params[:id]) }
-    end
   end
   # GET /maps/1
   # GET /maps/1.json

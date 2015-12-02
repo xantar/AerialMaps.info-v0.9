@@ -70,7 +70,7 @@
         <%= link_to 'Destroy', user_map_url(map.user.id,map), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
 			<% if map.processing != true && map.complete == false && map.queued == false %>
-				<%= link_to 'Add Photos', new_user_map_photo_multiple_url(map.user.id,map), class: "btn 	btn-success" %>
+				<%= link_to 'Add Photos', new_user_map_photo_multiple_url(map.user.id,map), class: "btn btn-info" %>
 			<% end %>
 			<% if map.photos.count > 1 %>
 				<% if map.failed == false %>
