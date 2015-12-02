@@ -277,12 +277,12 @@ case $STEP in
   cp ../../images/map_generating.png ../../photos/maps/"$MAP"_20.png
 
   sleep 1
-  if [ $MET == PreAligned ] ; then
+  if [ $MET == prealigned ] ; then
     /usr/bin/cpfind -n 1 --prealigned --minmatches $MINMATCH --sieve1width=$S1W --sieve1height=$S1H --sieve2width=$S2W --sieve2width=$S2H -o ./map.pto ./map.pto
-  elif [ $MET == MultiRow ]; then
+  elif [ $MET == multirow ]; then
     /usr/bin/cpfind -n 1 --multirow --minmatches $MINMATCH --sieve1width=$S1W --sieve1height=$S1H --sieve2width=$S2W --sieve2width=$S2H -o ./map.pto ./map.pto
   else
-    /usr/bin/cpfind --linearmatch --minmatches $MINMATCH --sieve1width=$S1W --sieve1height=$S1H --sieve2width=$S2W --sieve2width=$S2H -o ./map.pto ./map.pto
+    /usr/bin/cpfind -n 1 --linearmatch --minmatches $MINMATCH --sieve1width=$S1W --sieve1height=$S1H --sieve2width=$S2W --sieve2width=$S2H -o ./map.pto ./map.pto
   fi
 
   ## Check exit status, if error then exit ##

@@ -26,9 +26,9 @@ def default_cameras
 end
 
 def default_mapping_methods
-  MappingMethod.create!( :name => "MultiRow" )
-  MappingMethod.create!( :name => "PreAligned" )
-  MappingMethod.create!( :name => "LinearMatch" )
+  MappingMethod.create!( :name => "multirow" )
+  MappingMethod.create!( :name => "prealigned" )
+  MappingMethod.create!( :name => "linearmatch" )
 end
 
 def default_mapping_levels
