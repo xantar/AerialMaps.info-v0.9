@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20151201202519) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.integer  "order",         default: 0
+    t.integer  "image_order",   default: 0
     t.string   "image_uid"
     t.string   "user_id"
     t.string   "image_name"

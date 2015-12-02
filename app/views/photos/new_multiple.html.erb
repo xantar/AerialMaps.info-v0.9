@@ -67,6 +67,10 @@
     multiple_photos_form.on('fileuploaddone', function() {
       wrapper.hide();
       progress_bar.width(0);
+      $.ajax({
+      url: "/users/<%= "#{params[:user_id]}" %>/maps/uploadcomplete/<%= "#{params[:maps_id]}" %>",
+      type: 'PUT'
+  });
     });
 
     multiple_photos_form.on('fileuploadsubmit', function (e, data) {

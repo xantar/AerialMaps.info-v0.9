@@ -2,7 +2,7 @@ class GalleriesController < ApplicationController
   before_filter :check_gallery, only: [:show]
 
   def index
-    @maps = Map.all.where( gallery: true )
+    @maps = Map.all.where( gallery: true ).where( complete: true )
   end
 
   def show

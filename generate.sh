@@ -83,12 +83,12 @@ case $MLEV in
     ;&
   Better)
     #Seive 1
-    S1W=30
-    S1H=30
+    S1W=25
+    S1H=25
 
     #Seive 2
-    S2W=10
-    S2H=10
+    S2W=12
+    S2H=12
     ;&
   Best)
     #Seive 1
@@ -107,6 +107,7 @@ case $MLEV in
     #Seive 2
     S2W=5
     S2H=5
+    echo "Invalid Speed"
   ;&
 esac
 
@@ -114,8 +115,6 @@ case $STEP in
 0)
   # The script starts in ./ (The root directory of the Rails App)
   cd public
-  echo "0" > $MAP/process.status
-  echo $$ > $MAP/process.id
   
   #################### Step 1: Lens correction ####################
 
@@ -128,6 +127,9 @@ case $STEP in
   rm -rf $MAP
   mkdir $MAP
   mv $MAP.order $MAP/image.order
+
+  echo "0" > $MAP/process.status
+  echo $$ > $MAP/process.id
   
   # go back to root
   cd ..
@@ -144,7 +146,7 @@ case $STEP in
   echo " Generating Map:"
   echo "       Lens: $CAM       Map: $MAP"
   echo "    Mapping: $MET   Bearing: $ROT"
-
+  echo "    Speed: $MLEV"
   echo '------------------------------------'
   echo "  Starting Lens Profile Correction"
   echo '------------------------------------'

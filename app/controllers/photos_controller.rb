@@ -5,12 +5,12 @@ class PhotosController < ApplicationController
   end
 
   def new
-    @photos = Photo.order('image_uid ASC')
+    @photos = Photo.order('image_order ASC').order('taken_at ASC').order('image_uid ASC')
     @photo = Photo.new
   end
 
   def new_multiple
-    @photos = Photo.order('image_uid ASC')
+    @photos = Photo.order('image_order ASC').order('taken_at ASC').order('image_uid ASC')
     @photo = Photo.new
   end
 

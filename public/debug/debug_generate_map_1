@@ -1,0 +1,442 @@
+ Generating Map:
+       Lens: 1       Map: 1
+    Mapping: MultiRow   Bearing: 180.0
+    Speed: Best
+------------------------------------
+  Starting Lens Profile Correction
+------------------------------------
+1 - DJI Phantom FC200 (Phantom 2 Vision & Vision +)
+RawTherapee, version 4.0.12.0
+WARNING: closing this window will close RawTherapee!
+
+Processing: ../photos/unproc/1/DJI00422.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00421.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00411.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00414.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00413.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00409.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00412.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00410.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00415.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00416.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00418.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00419.JPG
+  Merging procparams #0
+Processing: ../photos/unproc/1/DJI00420.JPG
+  Merging procparams #0
+------------------------------------
+      Finished Lens Correction
+------------------------------------
+------------------------------------
+           Starting Mosaic
+------------------------------------
+Generating pto file...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00409.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00410.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00411.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00412.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00413.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00414.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00415.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00416.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00418.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00419.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00420.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00421.jpg...
+Reading /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/dji00422.jpg...
+
+Assigned 1 lenses.
+
+Written output to /home/ubuntu/AerialMaps.info-v0.9/public/processing/1/map.pto
+Hugin's cpfind 2013.0.0.4692917e7a55
+based on Pan-o-matic by Anael Orlinski
+
+Project contains the following images:
+Image 0
+  Imagefile: dji00409.jpg
+  Remapped : no
+Image 1
+  Imagefile: dji00410.jpg
+  Remapped : no
+Image 2
+  Imagefile: dji00411.jpg
+  Remapped : no
+Image 3
+  Imagefile: dji00412.jpg
+  Remapped : no
+Image 4
+  Imagefile: dji00413.jpg
+  Remapped : no
+Image 5
+  Imagefile: dji00414.jpg
+  Remapped : no
+Image 6
+  Imagefile: dji00415.jpg
+  Remapped : no
+Image 7
+  Imagefile: dji00416.jpg
+  Remapped : no
+Image 8
+  Imagefile: dji00418.jpg
+  Remapped : no
+Image 9
+  Imagefile: dji00419.jpg
+  Remapped : no
+Image 10
+  Imagefile: dji00420.jpg
+  Remapped : no
+Image 11
+  Imagefile: dji00421.jpg
+  Remapped : no
+Image 12
+  Imagefile: dji00422.jpg
+  Remapped : no
+
+--- Analyze Images ---
+i0 : Analyzing image...
+i1 : Analyzing image...
+i2 : Analyzing image...
+i3 : Analyzing image...
+i4 : Analyzing image...
+i5 : Analyzing image...
+i6 : Analyzing image...
+i7 : Analyzing image...
+i8 : Analyzing image...
+i9 : Analyzing image...
+i10 : Analyzing image...
+i11 : Analyzing image...
+i12 : Analyzing image...
+
+--- Find matches ---
+i0 <> i1 : Found 0 matches
+i1 <> i2 : Found 0 matches
+i2 <> i3 : Found 0 matches
+i3 <> i4 : Found 20 matches
+i4 <> i5 : Found 24 matches
+i5 <> i6 : Found 20 matches
+i6 <> i7 : Found 24 matches
+i7 <> i8 : Found 16 matches
+i8 <> i9 : Found 19 matches
+i9 <> i10 : Found 0 matches
+i10 <> i11 : Found 17 matches
+i11 <> i12 : Found 20 matches
+
+--- Find matches in images groups ---
+i0 <> i2 : Found 0 matches
+i0 <> i3 : Found 0 matches
+i0 <> i9 : Found 0 matches
+i0 <> i10 : Found 0 matches
+i0 <> i12 : Found 0 matches
+i1 <> i3 : Found 0 matches
+i1 <> i9 : Found 0 matches
+i1 <> i10 : Found 0 matches
+i1 <> i12 : Found 0 matches
+i2 <> i9 : Found 0 matches
+i2 <> i10 : Found 0 matches
+i2 <> i12 : Found 0 matches
+i3 <> i9 : Found 0 matches
+i3 <> i10 : Found 0 matches
+i3 <> i12 : Found 0 matches
+i9 <> i12 : Found 18 matches
+i10 <> i12 : Found 0 matches
+
+--- Find pair-wise matches ---
+i0 <> i4 : Found 0 matches
+i0 <> i5 : Found 0 matches
+i0 <> i6 : Found 0 matches
+i0 <> i7 : Found 0 matches
+i0 <> i8 : Found 0 matches
+i0 <> i11 : Found 0 matches
+i1 <> i4 : Found 0 matches
+i1 <> i5 : Found 0 matches
+i1 <> i6 : Found 0 matches
+i1 <> i7 : Found 0 matches
+i1 <> i8 : Found 0 matches
+i1 <> i11 : Found 0 matches
+i2 <> i4 : Found 0 matches
+i2 <> i5 : Found 0 matches
+i2 <> i6 : Found 0 matches
+i2 <> i7 : Found 0 matches
+i2 <> i8 : Found 0 matches
+i2 <> i11 : Found 0 matches
+i3 <> i5 : Found 0 matches
+i3 <> i6 : Found 0 matches
+i3 <> i7 : Found 0 matches
+i3 <> i8 : Found 0 matches
+i3 <> i11 : Found 0 matches
+i4 <> i6 : Found 16 matches
+i4 <> i7 : Found 0 matches
+i4 <> i8 : Found 0 matches
+i4 <> i9 : Found 0 matches
+i4 <> i10 : Found 0 matches
+i4 <> i11 : Found 0 matches
+i4 <> i12 : Found 0 matches
+i5 <> i7 : Found 14 matches
+i5 <> i8 : Found 0 matches
+i5 <> i9 : Found 0 matches
+i5 <> i10 : Found 0 matches
+i5 <> i11 : Found 0 matches
+i5 <> i12 : Found 0 matches
+i6 <> i8 : Found 11 matches
+i6 <> i9 : Found 0 matches
+i6 <> i10 : Found 0 matches
+i6 <> i11 : Found 0 matches
+i6 <> i12 : Found 0 matches
+i7 <> i9 : Found 9 matches
+i7 <> i10 : Found 0 matches
+i7 <> i11 : Found 0 matches
+i7 <> i12 : Found 0 matches
+i8 <> i10 : Found 0 matches
+i8 <> i11 : Found 0 matches
+i8 <> i12 : Found 0 matches
+i9 <> i11 : Found 15 matches
+
+--- Write Project output ---
+Written output to ./map.pto
+
+Detection took 75.061 seconds.
+*** Adaptive geometric optimisation
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          7.17700302840653 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):          6.99146428598125 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):          6.58117720919341 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):          5.88986186211945 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):          5.01735978739497 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 5 iteration(s):          4.82464945915173 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 6 iteration(s):          4.47571290030611 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 7 iteration(s):          3.92326457404198 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 8 iteration(s):          3.20279180054824 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 9 iteration(s):          2.92194575687034 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 10 iteration(s):          2.02981461505481 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 11 iteration(s):          1.76264989057756 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 12 iteration(s):           1.6532007303463 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 13 iteration(s):           1.3501692318765 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 14 iteration(s):          1.27659534807457 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 15 iteration(s):          1.18815815340551 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 16 iteration(s):          1.14914478806266 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 17 iteration(s):          1.01429181556397 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 18 iteration(s):          0.95331973064889 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 19 iteration(s):          0.89048199670402 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 20 iteration(s):          0.83593213213064 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 21 iteration(s):         0.806750810543433 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 22 iteration(s):         0.788269395896497 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 23 iteration(s):         0.742045110787195 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 24 iteration(s):         0.716727848165757 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 25 iteration(s):         0.670180871631401 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 26 iteration(s):         0.582775220584223 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 27 iteration(s):         0.434531743967774 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 28 iteration(s):          0.35197564629212 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 29 iteration(s):          0.30973424607718 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 30 iteration(s):         0.309725483000474 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 31 iteration(s):         0.301579633878997 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 32 iteration(s):         0.301579633878997 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):         0.301579635543482 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):          0.29543648236944 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):         0.295373780825273 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):         0.295373634003962 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):         0.295373634003962 units
+
+Optimizing Variables
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):          0.29539243716159 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):         0.279550676620328 units
+Strategy 1
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):         0.278664231424225 units
+
+Optimizing Variables
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 0 iteration(s):         0.278664232678944 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 1 iteration(s):          0.27683400996295 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 2 iteration(s):         0.276683547607655 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 3 iteration(s):         0.276677400402186 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 4 iteration(s):          0.27666842492924 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 5 iteration(s):         0.276668408325762 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 6 iteration(s):         0.276667697173082 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 7 iteration(s):         0.276667411118928 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 8 iteration(s):          0.27666691615245 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 9 iteration(s):         0.276647121311513 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 10 iteration(s):         0.276645986149043 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 11 iteration(s):         0.276634954370028 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 12 iteration(s):          0.27663465852661 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 13 iteration(s):         0.276632183553272 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 14 iteration(s):         0.276632139413829 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 15 iteration(s):         0.276631515929492 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 16 iteration(s):         0.276631513145833 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 17 iteration(s):         0.276631349429175 units
+Strategy 2
+Average (rms) distance between Controlpoints 
+after 18 iteration(s):         0.276631348616175 units
+
+loading: ./dji00409.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00410.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00411.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00412.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00413.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00414.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00415.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00416.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00418.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00419.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00420.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00421.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+loading: ./dji00422.jpg
+downscaling: 4384x3288  2192x1644  1096x822  
+
+Sampling points: \                                                              Sampling points, : |                                                            Sampling points, , : /                                                          Sampling points, : -                                                            Sampling points, : \                                                            Sampling points, , sampling points: |                                           Sampling points, : /                                                            Sampling points, : -                                                            Sampling points, , sampling points: \                                           Sampling points, : |                                                            Sampling points, : /                                                            Sampling points, , sampling points: -                                           Sampling points, : \                                                            Sampling points, : |                                                            Sampling points, , sampling points: /                                           Sampling points, : -                                                            Sampling points, : \                                                            Sampling points, , sampling points: |                                           Sampling points, : /                                                            Sampling points, : -                                                            Sampling points, , sampling points: \                                           Sampling points, : |                                                            Sampling points, : /                                                            Sampling points, , sampling points: -                                           Sampling points, : \                                                            Sampling points, : |                                                            Sampling points, , sampling points: /                                           Sampling points, : -                                                            Sampling points, : \                                                            Sampling points, , sampling points: |                                           Sampling points, : /                                                            Sampling points, : -                                                            Sampling points, , sampling points: \                                           Sampling points, : |                                                            Sampling points, : /                                                            Sampling points, , extracting good points: -                                    Sampling points, : \                                                            Sampling points, : |                                                            Sampling points, , extracting good points: /                                    Sampling points, : -                                                            Sampling points, : \                                                            Sampling points, , extracting good points: |                                    Sampling points, : /                                                            Sampling points, : -                                                            Sampling points, , extracting good points: \                                    Sampling points, : |                                                            Sampling points, : /                                                            Sampling points, , extracting good points: -                                    Sampling points, : \                                                            Sampling points, : |                                                            Sampling points, , extracting good points: /                                    Sampling points, : -                                                            Sampling points, : \                                                            Sampling points, , extracting good points: |                                    Sampling points, : /                                                            Sampling points, : -                                                            Sampling points, , extracting good points: \                                    Sampling points, : |                                                            Sampling points, : /                                                            Sampling points, , extracting good points: -                                    Sampling points, : \                                                            Sampling points, : |                                                            Sampling points, , extracting good points: /                                    Sampling points, : -                                                            Sampling points: \                                                              : |                                                                             Selected 2392 points
+Photometric Optimization: /                                                     Photometric Optimization, : -                                                   Photometric Optimization, , : \                                                 Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 0, error: 19.055718: -                   Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 1, error: 18.731015: /                   Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 2, error: 18.625874: |                   Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 3, error: 18.584685: \                   Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 4, error: 18.564581: -                   Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 5, error: 18.562711: /                   Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 6, error: 18.562711: |                   Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 7, error: 18.556178: \                   Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 8, error: 18.556178: -                   Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 9, error: 18.556178: /                   Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 10, error: 18.556178: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 11, error: 18.554978: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 12, error: 18.554978: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 13, error: 18.540135: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 14, error: 18.536366: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 15, error: 18.536335: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 16, error: 18.536335: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 17, error: 18.533146: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 18, error: 18.532125: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 19, error: 18.532050: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 20, error: 18.532050: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 21, error: 18.532050: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 22, error: 18.532050: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 23, error: 18.531368: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 24, error: 18.531184: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 25, error: 18.528595: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 26, error: 18.526662: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 27, error: 18.525600: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 28, error: 18.525532: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 29, error: 18.525532: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 30, error: 18.525532: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 31, error: 18.525531: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 0, error: 18.525531: -                   Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 1, error: 18.503592: /                   Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 2, error: 18.500417: |                   Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 3, error: 18.500417: \                   Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 4, error: 18.500417: -                   Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 5, error: 18.500417: /                   Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 6, error: 18.500417: |                   Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 7, error: 18.497415: \                   Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 8, error: 18.495556: -                   Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 9, error: 18.494565: /                   Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 10, error: 18.494446: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 11, error: 18.494419: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 12, error: 18.494412: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 13, error: 18.494410: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 14, error: 18.494409: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 15, error: 18.494409: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 16, error: 18.494408: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 17, error: 18.494407: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 18, error: 18.494406: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 19, error: 18.494405: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 20, error: 18.494404: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 21, error: 18.494403: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 22, error: 18.493320: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 23, error: 18.493301: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 24, error: 18.493301: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 25, error: 18.493301: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 26, error: 18.493301: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 0, error: 18.493301: \                   Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 1, error: 18.454675: -                   Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 2, error: 18.454675: /                   Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 3, error: 18.454675: |                   Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 4, error: 18.454675: \                   Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 5, error: 18.454675: -                   Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 6, error: 18.447386: /                   Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 7, error: 18.444008: |                   Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 8, error: 18.440367: \                   Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 9, error: 18.436227: -                   Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 10, error: 18.434002: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 11, error: 18.432841: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 12, error: 18.432280: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 13, error: 18.432025: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 14, error: 18.431900: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 15, error: 18.431812: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 16, error: 18.431610: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 17, error: 18.430681: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 18, error: 18.426498: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 19, error: 18.426498: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 20, error: 18.426340: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 21, error: 18.426340: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 22, error: 18.426083: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 23, error: 18.424474: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 24, error: 18.423456: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 25, error: 18.422606: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 26, error: 18.418307: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 27, error: 18.418307: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 28, error: 18.418205: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 29, error: 18.418159: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 30, error: 18.418159: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 31, error: 18.418159: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 32, error: 18.418159: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 33, error: 18.418159: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 34, error: 18.417803: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 35, error: 18.417459: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 36, error: 18.417168: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 37, error: 18.417077: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 38, error: 18.417031: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 39, error: 18.417001: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 40, error: 18.416962: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 41, error: 18.416913: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 42, error: 18.416887: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 43, error: 18.416872: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 44, error: 18.416862: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 45, error: 18.416857: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 46, error: 18.416853: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 47, error: 18.416851: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 48, error: 18.416850: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 49, error: 18.416849: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 50, error: 18.416849: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 51, error: 18.416849: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 52, error: 18.416848: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 53, error: 18.416848: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 54, error: 18.416543: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 55, error: 18.416507: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 56, error: 18.416500: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 57, error: 18.416498: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 58, error: 18.416496: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 59, error: 18.416496: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 60, error: 18.416495: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 61, error: 18.416495: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 62, error: 18.416495: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 63, error: 18.416494: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 64, error: 18.416494: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 65, error: 18.416494: -                  Photometric Optimization, : \                                                   Photometric Optimization, : |                                                   Photometric Optimization, , Iteration: 66, error: 18.416494: /                  Photometric Optimization, : -                                                   Photometric Optimization, : \                                                   Photometric Optimization, , Iteration: 67, error: 18.416494: |                  Photometric Optimization, : /                                                   Photometric Optimization, : -                                                   Photometric Optimization, , Iteration: 68, error: 18.416494: \                  Photometric Optimization, : |                                                   Photometric Optimization, : /                                                   Photometric Optimization, , Iteration: 69, error: 18.416494: -                  Photometric Optimization, : \                                                   Photometric Optimization: |                                                     : /                                                                             Setting projection to Rectilinear
+Center panorama
+Fit panorama field of view to best size
+Setting field of view to 19 x 34.9974
+
+Written output to ./map.pto
+Blending 13 Images:
+enblend: info: combining non-overlapping images: ./map_0000.tif 1/1 ./map_0003.tif ./map_0011.tif
+enblend: info: combining non-overlapping images: ./map_0001.tif 1/1 ./map_0004.tif
+enblend: info: combining non-overlapping images: ./map_0002.tif 1/1 ./map_0005.tif
+enblend: info: combining non-overlapping images: ./map_0006.tif 1/1
+enblend: info: combining non-overlapping images: ./map_0007.tif 1/1
+enblend: info: combining non-overlapping images: ./map_0008.tif 1/1
+enblend: info: combining non-overlapping images: ./map_0009.tif 1/1
+enblend: info: combining non-overlapping images: ./map_0010.tif 1/1
+enblend: info: combining non-overlapping images: ./map_0012.tif 1/1
+enblend: info: writing final output

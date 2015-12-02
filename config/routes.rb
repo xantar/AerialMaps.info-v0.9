@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :mapping_levels
   root to: 'pages#welcome'
 
   resources :cameras, only: [:index]
@@ -56,6 +55,11 @@ Rails.application.routes.draw do
 # Route for Map Generation Cancelation
 
   get 'users/:user_id/maps/cancel/:id' => 'maps#cancel', as: :cancel
+  
+# Route for AJAX image upload Completion
+
+  get 'users/:user_id/maps/uploadcomplete/:id' => 'maps#uploadcomplete'
+  put 'users/:user_id/maps/uploadcomplete/:id' => 'maps#uploadcomplete'
 
   resources :maps
  

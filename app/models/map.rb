@@ -72,9 +72,18 @@ def rotate(rot)
   self.save
 end
 
+def autoSort
+  i = 1
+  self.photos.all.order( 'taken_at ASC' ).each do |image|
+    image.image_order=i
+    image.save
+    i=i+1
+  end
+end
+
 def calcBearing
-  photo1 = self.photos.order('image_uid ASC').first
-  photo2 = self.photos.order('image_uid ASC').second
+  photo1 = self.photos.order('image_order ASC').order('taken_at ASC').order('image_uid ASC').first
+  photo2 = self.photos.order('image_order ASC').order('taken_at ASC').order('image_uid ASC').second
 
   if photo1.gps_latitude!=nil && photo2.gps_latitude!=nil && photo1.gps_longitude!=nil && photo2.gps_longitude!=nil
     lat1 = (photo1.gps_latitude/180*Math::PI)
@@ -82,20 +91,20 @@ def calcBearing
     lon1 = (photo1.gps_longitude/180*Math::PI)
     lon2 = (photo2.gps_longitude/180*Math::PI)
 
-    if ( lat1 == lat2 && lon1 == lon2 && self.photos.order('image_uid ASC').third )
-      photo2 = self.photos.order('image_uid ASC').third
+    if ( lat1 == lat2 && lon1 == lon2 && self.photos.order('image_order ASC').order('taken_at ASC').order('image_uid ASC').third )
+      photo2 = self.photos.order('image_order ASC').order('taken_at ASC').order('image_uid ASC').third
       lat2 = (photo2.gps_latitude/180*Math::PI)
       lon2 = (photo2.gps_longitude/180*Math::PI)
     end
 
-    if ( lat1 == lat2 && lon1 == lon2 && self.photos.order('image_uid ASC').fourth )
-      photo2 = self.photos.order('image_uid ASC').fourth
+    if ( lat1 == lat2 && lon1 == lon2 && self.photos.order('image_order ASC').order('taken_at ASC').order('image_uid ASC').fourth )
+      photo2 = self.photos.order('image_order ASC').order('taken_at ASC').order('image_uid ASC').fourth
       lat2 = (photo2.gps_latitude/180*Math::PI)
       lon2 = (photo2.gps_longitude/180*Math::PI)
     end
 
-    if ( lat1 == lat2 && lon1 == lon2 && self.photos.order('image_uid ASC').fifth )
-      photo2 = self.photos.order('image_uid ASC').fifth
+    if ( lat1 == lat2 && lon1 == lon2 && self.photos.order('image_order ASC').order('taken_at ASC').order('image_uid ASC').fifth )
+      photo2 = self.photos.order('image_order ASC').order('taken_at ASC').order('image_uid ASC').fifth
       lat2 = (photo2.gps_latitude/180*Math::PI)
       lon2 = (photo2.gps_longitude/180*Math::PI)
     end
@@ -131,7 +140,7 @@ def imageOrder
     File.delete("public/processing/#{self.id}/image.order")
   end
   File.open("public/processing/#{self.id}/image.order","w") do |file|
-    self.photos.all.order( 'taken_at ASC' ).each do |image|
+    self.photos.order('image_order ASC').order('taken_at ASC').order('image_uid ASC').each do |image|
       file.puts "./#{image.image_name.downcase}\n"
     end  
 	file.close

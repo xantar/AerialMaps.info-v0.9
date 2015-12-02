@@ -33,6 +33,13 @@ class MapsController < ApplicationController
     end
   end
 
+  def uploadcomplete
+    @map = Map.find(params[:id])
+    @map.autoSort
+    respond_to do |format|
+      format.html { redirect_to edit_user_map_url(params[:user_id],params[:id]) }
+    end
+  end
   # GET /maps/1
   # GET /maps/1.json
 
@@ -114,6 +121,6 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:title, :image_uid, :image_name, :user_id, :complete, :processing, :camera, :mapping_method_id, :latitude, :longitude, :bearing, :gallery, :gallery_gps, :public, :public_gps, :status, :failed)
+      params.require(:map).permit(:title, :image_uid, :image_name, :user_id, :complete, :processing, :camera, :mapping_method_id, :mapping_level_id, :latitude, :longitude, :bearing, :gallery, :gallery_gps, :public, :public_gps, :status, :failed)
     end
 end
